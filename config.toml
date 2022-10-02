@@ -1,0 +1,13 @@
+baseURL = 'https://vonage-workshop.nexmodev.com/'
+languageCode = 'en-us'
+title = 'Vonage Workshop'
+# Change the default theme to be use when building the site with Hugo
+theme = "learn"
+pygmentsCodeFences = true
+pygmentsStyle = "dracula"
+[params]
+ themeVariant = "blue"
+
+# For search functionality
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
