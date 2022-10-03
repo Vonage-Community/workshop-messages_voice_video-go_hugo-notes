@@ -1,4 +1,4 @@
-baseURL = 'https://vonage-workshop.onrender.com'
+baseURL = 'https://v-workshop.onrender.com'
 languageCode = 'en-us'
 title = 'Vonage Workshop'
 # Change the default theme to be use when building the site with Hugo

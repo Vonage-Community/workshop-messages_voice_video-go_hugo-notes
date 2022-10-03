@@ -3,9 +3,9 @@ title: "Vonage APIs"
 weight : 1
 ---
 
-# Getting started with the Vonage APIs
+# APIs... Vonage does that!
 
-In these pages you will find the supporting materials for the workshop "Getting Started with Vonage APIs" at Ericsson Developer Conference in October 2022.
+In these pages you will find the supporting materials for the workshop "APIs... Vonage does that!" at Ericsson Developer Conference in October 2022.
 
 ## Slides
 
