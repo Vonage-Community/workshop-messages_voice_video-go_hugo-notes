@@ -11,3 +11,8 @@ pygmentsStyle = "dracula"
 # For search functionality
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
+
+
+# Theme config
+landingPageURL = "/"
+landingPageName = "<i class='fas fa-home'></i> Vonage APIs"
