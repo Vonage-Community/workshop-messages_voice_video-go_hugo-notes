@@ -11,5 +11,7 @@ Your API Key and Secret are available on your [Dashboard](https://dashboard.nexm
 
 ## Sections
 
-* [Simple API calls](/intro/api_calls)
-* [Vonage CLI](/intro/cli)
+* [Making simple API calls](/intro/api_calls)
+* [Using the Vonage CLI](/intro/cli)
+* [Setup the Workshop App](/intro/workshop_app)
+* [Creating your Vonage App](/intro/vonage_app)

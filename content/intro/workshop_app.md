@@ -23,11 +23,12 @@ npm init -y
 ... and add couple of libraries to the app:
 
 ```sh
-npm install express dotenv --save
+npm install express dotenv @vonage/server-sdk --save
 ```
 
-- `express` - a minimal and flexible Node.js web application framework
-- `dotenv` - loads environment variables from a `.env` file into `process.env`
+- **express** - a minimal and flexible Node.js web application framework
+- **dotenv** - loads environment variables from a *.env* file into *process.env*
+- **@vonage/server-sdk** - the Vonage Node Server SDK
 
 You will also install [nodemon](https://nodemon.io/), a utility that will monitor for any changes in your source and automatically restart your server.
 
@@ -35,45 +36,79 @@ You will also install [nodemon](https://nodemon.io/), a utility that will monito
 npm install --location=global nodemon
 ```
 
-
 ## 2. Express app
 
-Next, create the environment file `.env` and the entry point for the app `index.js`:
+Next, create the environment file **.env**, a **public** folder for resources and the entry point for the app **server.js**:
 
 ```sh
 touch .env
-touch index.js
+mkdir public
+touch server.js
 ```
 
-Add the following to `index.js`:
+Add the following to **server.js**:
 
 ```js
+'use strict';
+
+require('dotenv').config();
+
+const Vonage = require("@vonage/server-sdk");
+const vonage = new Vonage({
+  apiKey: process.env.API_KEY,
+  apiSecret: process.env.API_SECRET,
+  applicationId: process.env.APP_ID,
+  privateKey: process.env.PRIVATE_KEY
+});
+
 const express = require('express');
 const app = express();
-const port = 8662;
+const port = 3000;
 
+app.use(express.static("public"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// utility - print request to console
+var showRequest = (req, res) => {
+  console.log('-----------------------');
+  console.log(`URL: ${req.protocol}://${req.get('host')}${req.originalUrl}`);
+  console.log(req.body);
+  console.log('-----------------------');
+  res.status(200).end();
+}
+
+// Homepage
 app.get('/', (req, res) => {
   res.send('Hello World');
 });
 
+// Messages - status webhook
+
+// Messages - inbound webhook
+
+// Messages - send SMS
+
+// Start the server
 app.listen(port, () => {
   console.log(`Server started at http://localhost:${port}`);
 });
+
 ```
 
 Now, you are ready to launch the server via `nodemon`:
 
 ```sh
-nodemon index.js
+nodemon server.js
 ```
 
 A start message will be displayed:
 
 ```text
-Server started at http://localhost:8662
+Server started at http://localhost:3000
 ```
 
-Notice the port is `8662`. You will that in the next step.
+Notice the port is **3000**. You will that in the next step.
 
 ## 3. Make your app accessible to the world
 
@@ -85,13 +120,13 @@ You will be building some endpoints that you will use as webhooks for your Vonag
 npm install --location=global localtunnel
 ```
 
-And make a local port available via a `loca.lt` subdomain - for example:
+And make a local port available via a **loca.lt** subdomain - for example:
 
 ```sh
-lt --port 8662 --subdomain "your-subdomain"
+lt --port 3000 --subdomain "your-subdomain"
 ```
 
-Now, you can load your local website via `https://your-subdomain.loca.lt` (or equivalent).
+Now, you can load your local website via **https://your-subdomain.loca.lt** (or equivalent).
 
 **Resources**:
 

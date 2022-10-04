@@ -5,7 +5,7 @@ weight: 4
 
 In this section, you will set up a Vonage application to use with your app.
 
-## New Vonage Application
+## 1. New Vonage Application
 
 From the [dashboard](https://dashboard.nexmo.com), visit "Applications" and then ["Create a new application"](https://dashboard.nexmo.com/applications/new).
 
@@ -27,17 +27,29 @@ Click "Generate new application."
 
 > NB: If you restart your localtunnel and your subdomain is not available anylonger, you will have to update the webhooks to use the new random subdomain you'll be given.
 
-## Link your Vonage Number
+## 2. Link your Vonage Number
 
 Once you have created the application, from the list of available numbers, link the Vonage number you rented earlier, to use with this app. Multiple numbers can be linked.
 
 ![App Numbers](/intro/app_numbers.png)
 
-## Application ID
+## 3. Environment Variables
 
-Your application will be identified inside Vonage by it's Application ID. Add it as a variable inside the environment file `.env`:
+Your application will be identified inside Vonage by it's Application ID. Add it as a variable inside the environment file `.env`, together with the `SUBDOMAIN`, `API_KEY`, `API_SECRET`, `VONAGE_NUMBER` and `PRIVATE_KEY`:
 
 ```yml
-APP_ID=7feb1f0e-d0f7-4a12-b49c-7d5c08a46292
+SUBDOMAIN='' # The subdomain you want to use for the server
+API_KEY='' # Your Vonage API key
+API_SECRET='' # Your Vonage API secret
+VONAGE_NUMBER='' # Your Vonage number
+APP_ID='' # Your Vonage Application ID
+PRIVATE_KEY='-----BEGIN PRIVATE KEY-----
+  the contents of private.key goes here
+-----END PRIVATE KEY-----' # Your Vonage Application private key
+
 ```
 
+**Resources**:
+
+- Vonage Dashboard: [dashboard.nexmo.com](https://dashboard.nexmo.com)
+- Vonage Developer Portal: [developer.vonage.com](https://developer.vonage.com)

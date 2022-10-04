@@ -21,6 +21,8 @@ A successful response will include the remaining credit and the autoreload statu
 {"value":81.68078129,"autoReload":false}
 ```
 
+> NB: **curl** is a utility that allows one to make HTTP calls from a terminal and it comes preinstalled on most operating systems. Download packages are available at: [curl.se/download.html](https://curl.se/download.html)
+
 **Resources**:
 
 - Documentation page: [developer.vonage.com/account/code-snippets/account-balance](https://developer.vonage.com/account/code-snippets/account-balance)

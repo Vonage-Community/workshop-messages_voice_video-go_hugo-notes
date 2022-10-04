@@ -37,7 +37,7 @@ The stored credentials are accessible via:
 vonage config
 ```
 
-> NB: Credentials are stored in `~/.config/@vonage/cli/vonage.config.json`.
+> NB: Credentials are stored in **~/.config/@vonage/cli/vonage.config.json**.
 
 ## 3. Check balance
 
