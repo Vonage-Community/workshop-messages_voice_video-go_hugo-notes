@@ -50,8 +50,22 @@ vonage balance
 The CLI has a plugin architecture so tasks for various APIs can be installed. To be able to send an SMS via the CLI, you'll need to install the sms plugin:
 
 ```sh
-vonage plugins:install sms
+vonage plugins:install @vonage/cli-plugin-sms
 ```
 
-> **TODO** - currently failing
+We now have the `vonage sms` command - you can see how to use it:
 
+```sh
+vonage sms --help
+```
+
+To send an SMS:
+
+```sh
+vonage sms --to=15551234567 --from=Paul --message='A text message sent using the Vonage SMS API'
+```
+
+**Resources**:
+
+- Homepage: [developer.vonage.com/application/vonage-cli](https://developer.vonage.com/application/vonage-cli)
+- CLI project: [github.com/Vonage/vonage-cli](https://github.com/Vonage/vonage-cli)
