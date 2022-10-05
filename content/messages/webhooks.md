@@ -13,9 +13,7 @@ Here what happens when you send a message via the Messages API:
 Inside **index.js**, under "**// Messages - status webhook**", add the following:
 
 ```js
-app.post('/messages/status', (req, res) => {
-  showRequest(req, res);
-});
+app.post('/messages/status', showRequest);
 ```
 
 Any incoming payload to the **/messages/status** endpoint will now be displayed to the console.
@@ -29,7 +27,5 @@ Here what happens when you receive a message via the Messages API:
 Under "**// Messages - inbound webhook**", add:
 
 ```js
-app.post('/messages/inbound', (req, res) => {
-  showRequest(req, res);
-});
+app.post('/messages/inbound', showRequest);
 ```
