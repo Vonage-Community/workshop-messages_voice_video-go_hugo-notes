@@ -23,10 +23,11 @@ npm init -y
 ... and add couple of libraries to the app:
 
 ```sh
-npm install express dotenv @vonage/server-sdk --save
+npm install express mustache-express dotenv @vonage/server-sdk --save
 ```
 
 - **express** - a minimal and flexible Node.js web application framework
+- **mustache-express** - enables the use of mustache, a template engine, with express
 - **dotenv** - loads environment variables from a *.env* file into *process.env*
 - **@vonage/server-sdk** - the Vonage Node Server SDK
 
@@ -42,7 +43,7 @@ Next, create the environment file **.env**, a **public** folder for resources an
 
 ```sh
 touch .env
-mkdir public
+mkdir views
 touch server.js
 ```
 
@@ -66,8 +67,14 @@ const app = express();
 const port = 3000;
 
 app.use(express.static("public"));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+var mustacheExpress = require('mustache-express');
+app.engine('mustache', mustacheExpress());
+app.set('view engine', 'mustache');
+app.set('views', __dirname + '/views');
 
 // utility - print request to console
 var showRequest = (req, res) => {
@@ -87,6 +94,8 @@ app.get('/', (req, res) => {
 
 // Messages - inbound webhook
 
+// Messages - form
+
 // Messages - send SMS
 
 // Start the server
@@ -99,7 +108,7 @@ app.listen(port, () => {
 Now, you are ready to launch the server via `nodemon`:
 
 ```sh
-nodemon server.js
+nodemon -e js,mustache server.js
 ```
 
 A start message will be displayed:
