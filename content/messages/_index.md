@@ -1,6 +1,6 @@
 ---
 title: "Messages API"
-weight : 2
+weight : 3
 ---
 
 In this section, you are going to learn how to communicate with customers over their preferred channels using Vonage’s Messages and Dispatch APIs.
