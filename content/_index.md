@@ -11,6 +11,10 @@ In these pages you will find the supporting materials for the workshop "APIs... 
 
 [Slide deck PDF](/slides/vonage-workshop.pdf)
 
+## Projects
+
+[Node Express app](https://github.com/Vonage-Community/workshop-verify_messages_voice_meetings-node_express-app)
+
 ## Sections
 
 * [Getting started](/intro)

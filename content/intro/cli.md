@@ -7,6 +7,8 @@ The Vonage CLI allows you to interact with your Vonage account and use our produ
 
 ## 1. Installation
 
+It can be installed via **npm**:
+
 ```sh
 npm install --location=global @vonage/cli
 ```
@@ -17,18 +19,20 @@ or, if using yarn:
 yarn global add @vonage/cli
 ```
 
-A `vonage` command is now available to use:
+The **vonage** command is now available to use:
 
 ```sh
  vonage --help
 ```
 
+---
+
 ## 2. Configuration
 
-To configure the CLI to use your credentials:
+Before using the CLI, it needs to be configured with your credentials:
 
 ```sh
-vonage config:set --apiKey=xxx --apiSecret=xxx
+vonage config:set --apiKey=$VONAGE_API_KEY --apiSecret=$VONAGE_API_SECRET
 ```
 
 The stored credentials are accessible via:
@@ -39,11 +43,17 @@ vonage config
 
 > NB: Credentials are stored in **~/.config/@vonage/cli/vonage.config.json**.
 
+---
+
 ## 3. Check balance
+
+To check your account balance:
 
 ```sh
 vonage balance
 ```
+
+---
 
 ## 4. Send an SMS
 
@@ -53,17 +63,19 @@ The CLI has a plugin architecture so tasks for various APIs can be installed. To
 vonage plugins:install @vonage/cli-plugin-sms
 ```
 
-We now have the `vonage sms` command - you can see how to use it:
+We now have the **vonage sms** command - you can see how to use it:
 
 ```sh
 vonage sms --help
 ```
 
-To send an SMS:
+To send an SMS, copy the snippet below and replace **YOUR_NUMBER** with your mobile number:
 
 ```sh
-vonage sms --to=15551234567 --from=Paul --message='A text message sent using the Vonage SMS API'
+vonage sms --message='A text message sent using the Vonage CLI' --from=Vonage --to=YOUR_NUMBER
 ```
+
+---
 
 **Resources**:
 
