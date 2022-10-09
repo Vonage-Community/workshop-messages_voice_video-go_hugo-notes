@@ -20,12 +20,4 @@ In these pages you will find the supporting materials for the workshop "APIs... 
 * [Getting started](/intro)
 * [Messages API](/messages)
 * [Voice API](/voice)
-* [In-app Messaging and Voice](/in-app)
-* [Meetings APIs (Video)](/video)
-
-## Resources
-
-Here are some resources you may find useful, including all the links from the presentation slides, and some documentation for the Voice API.
-
-* [Vonage Customer Dashboard](https://dashboard.nexmo.com)
-* [Vonage Developer Portal](https://developer.vonage.com)
+* [Meetings APIs (Video)](/meetings)
