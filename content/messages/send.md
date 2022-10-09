@@ -3,100 +3,42 @@ title: "Send an SMS"
 weight: 2
 ---
 
-## 1. SMS Composer
+To send an SMS, simply enter your phone number and, optionally, change the default message:
 
-Inside the **views** folder create a new file named **message.mustache**, with the following content:
+![Send Message](/messages/interface.png?classes=thumbnail_lg)
 
-```html
-<!doctype html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-  <div class="max-w-screen-sm mx-auto py-8 text-gray-700">
-    <form class="space-y-6" action="/messages/send" method="POST">
-      <h1 class="text-2xl">Send an SMS</h1>
-      <div>
-        <label for="recipient">Recipient</label>
-        <input id="recipient" name="recipient" type="phone" autocomplete="phone" required class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500" placeholder="">
-      </div>
-      <div>
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500" placeholder=""></textarea>
-      </div>
-      <button type="submit" class="w-full rounded-md border bg-indigo-600 hover:bg-indigo-700 py-2 px-4 text-white">
-        Send
-      </button>
-    </form>
-  </div>
-</body>
-</html>
-```
+## vonage.messages.send
 
-And in **server.js** add the following under "**// Messages - form**":
+The code to send an SMS is located in **_messages/index.js** under the **/messages/send** endpoint:
 
 ```js
-app.get('/message', (req, res) => {
-  res.render('message');
+const SMS = require("@vonage/server-sdk/lib/Messages/SMS");
+const sms = new SMS(
+  request.body.message, 
+  request.body.recipient, 
+  process.env.VONAGE_NUMBER
+);
+
+vonage.messages.send(sms, (error, data) => {
+  ...
 });
 ```
 
-This will serve as the form to compose the SMS (recipient and content) and will be now available at [http://localhost:3000/message](http://localhost:3000/message).
-
-![Message Form](/messages/message_form.png)
-
-## 2. Sending an SMS
-
-Inside the **views** folder create a new file named **message_sent.mustache**, with the following content:
-
-```html
-<!doctype html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-  <div class="max-w-screen-sm mx-auto py-8 text-gray-700">
-    <h1 class="text-2xl">{{status}}</h1>
-    <div class="mt-4">{{data}}</div>
-    <div class="mt-4"><a href="/message" class="underline">Send another</a></div>
-  </div>
-</body>
-</html>
-```
-
-And in **server.js** add the following under "**// Messages - send SMS**":
-
-```js
-app.post('/messages/send', function(req, res) {
-  const SMS = require("@vonage/server-sdk/lib/Messages/SMS");
-  vonage.messages.send(
-    new SMS(req.body.message, req.body.recipient, process.env.VONAGE_NUMBER),
-    (err, data) => {
-      if (err) {
-        res.render('message_sent', { status: 'Message not sent', data: JSON.stringify(err) });
-      } else {
-        res.render('message_sent', { status: 'Message sent successfully', data: JSON.stringify(data) });
-      }
-    }
-  );
-});
-```
-
-Now, navigate to [http://localhost:3000/message](http://localhost:3000/message), complete the form and send an SMS to your mobile.
-
-![First Message](/messages/first_message_trim.png)
-
-## 3. Status events
+The console will show the send result:
 
 ```yml
------------------------
-URL: http://subdomain.loca.lt/messages/status
+{ message_uuid: 'c9cc9dfb-2f12-426c-8422-f73d96198745' }
+```
+
+As the sending operation will happen asyncronously, only a **message_uuid** is returned.
+
+## Status events
+
+As the message progresses through its lifecycle, events sent to the configured **Status URL**.
+
+### Message submitted
+
+```yml
 {
   to: 'xxx',
   from: 'xxx',
@@ -106,9 +48,11 @@ URL: http://subdomain.loca.lt/messages/status
   usage: { price: '0.0412', currency: 'EUR' },
   status: 'submitted'
 }
------------------------
------------------------
-URL: http://subdomain.loca.lt/messages/status
+```
+
+### Message delivered
+
+```yml
 {
   to: 'xxx',
   from: 'xxx',
@@ -117,10 +61,9 @@ URL: http://subdomain.loca.lt/messages/status
   timestamp: '2022-10-04T22:04:02Z',
   status: 'delivered'
 }
------------------------
 ```
 
-## 4. Messages API Logs
+## Message Logs
 
 A log of your sent messages can be found in the Dashboard, under Logs > [Messages Logs](https://dashboard.nexmo.com/messages/logs).
 

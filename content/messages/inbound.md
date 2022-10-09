@@ -3,11 +3,15 @@ title: "Inbound SMS"
 weight: 3
 ---
 
-Your app will also display a console message when an inbound message is received on the number associated with the app. Reply to the message you just received to see it in action:
+The workshop is also configured to receive inbound messages.
+
+## Inbound URL
+
+When you receive a message via the Messages API, the inbound URL will receive an request with all the message information:
+
+![Receiving an SMS](/messages/inbound_url.gif?classes=thumbnail)
 
 ```yml
------------------------
-URL: http://subdomain.loca.lt/messages/inbound
 {
   to: 'xxx',
   from: 'xxx',
@@ -19,7 +23,6 @@ URL: http://subdomain.loca.lt/messages/inbound
   text: 'Hello Back!',
   sms: { num_messages: '1' }
 }
------------------------
 ```
 
 ## Messages API Logs
