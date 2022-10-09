@@ -9,7 +9,7 @@ The workshop is also configured to receive inbound messages.
 
 When you receive a message via the Messages API, the inbound URL will receive an request with all the message information:
 
-![Receiving an SMS](/messages/inbound_url.gif?classes=thumbnail)
+![Receiving an SMS](/messages/inbound_url.gif?classes=thumbnail_lg)
 
 ```yml
 {

@@ -9,7 +9,7 @@ Your Vonage application has currently the Messages capability only - we'll add V
 
 Navigate to your application and click the **Edit** button.
 
-![App summary](/voice/app.png)
+![App summary](/voice/app.png?classes=thumbnail_lg)
 
 Under **Capabilities**, toggle the switch besides **Voice**. This will enable the use of the Voice APIs with your app and setting 3 URL to be used as webhooks.
 
@@ -23,6 +23,6 @@ If you use ngrok or localtunnel, enter your given URL followed by the respective
 - `https://edc-2022.ngrok.io/voice/answer` - for Answer URL
 - `https://edc-2022.ngrok.io/voice/event` - for Event URL
 
-![App Capabilities >> Voice](/voice/app_capabilities.png)
+![App Capabilities >> Voice](/voice/app_capabilities.png?classes=thumbnail_lg)
 
 Don't forget to press **Save changes**.

@@ -9,7 +9,7 @@ When you created your Vonage application, no capabilities were selected.
 
 Navigate to your application and click the **Edit** button.
 
-![App summary](/messages/app.png)
+![App summary](/messages/app.png?classes=thumbnail_lg)
 
 Under **Capabilities**, toggle the switch besides **Messages**. This will enable the use of the Messages API with your app and setting 2 URL to be used as webhooks.
 
@@ -23,7 +23,7 @@ If you use ngrok or localtunnel, enter your given URL followed by the respective
 - `https://edc-2022.ngrok.io/messages/inbound` - for Inbound URL
 - `https://edc-2022.ngrok.io/messages/status` - for Status URL
 
-![App Capabilities >> Messages](/messages/app_capabilities.png)
+![App Capabilities >> Messages](/messages/app_capabilities.png?classes=thumbnail_lg)
 
 Don't forget to press **Save changes**.
 
@@ -31,10 +31,10 @@ Don't forget to press **Save changes**.
 
 Here what happens when you send a message via the Messages API:
 
-![Sending an SMS](/messages/status_url.gif?classes=thumbnail)
+![Sending an SMS](/messages/status_url.gif?classes=thumbnail_lg)
 
 ## Inbound URL
 
 Here what happens when you receive a message via the Messages API:
 
-![Receiving an SMS](/messages/inbound_url.gif?classes=thumbnail)
+![Receiving an SMS](/messages/inbound_url.gif?classes=thumbnail_lg)

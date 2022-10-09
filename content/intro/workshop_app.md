@@ -48,7 +48,7 @@ You can now navigate to [http://localhost:3000](http://localhost:3000) to see th
 
 ## 3. Environment Variables
 
-The app will be using your Vonage credentials - they will be stored in a file named **.env** inside the root of the project. A sample file **env.sample** is provided and we'll make a copy of it:
+The app will be using your Vonage credentials. A sample file **env.sample** is provided - you will create a copy named **.env**:
 
 ```sh
 cp env.sample .env
@@ -69,7 +69,7 @@ APP_ID=''
 PRIVATE_KEY='private.key'
 ```
 
-We will be adding them in the next step.
+You will be adding your credentials to this file in the next step.
 
 ## 4. Make your app accessible to the world
 
@@ -79,11 +79,9 @@ The app you just cloned includes ndpoints that can be use as webhooks for your V
 
 ### 4.1 Firewalls & networks
 
-Various utilities exist to enable you to expose local ports to the world. Two are described below.
+Various utilities exist to enable you to expose local ports to the world. Two are described below (ngrok preferred).
 
-For the purpose of this workshop, we're going to assume that is not possible and instead you will be using custom webhooks provided by an separate application we built for this purpose.
-
-> TODO: add URL for the repo
+Some corporate networks are more restricted than others - alternatives will be provided for when exposing local ports is not possible.
 
 ### 4.2 ngrok
 
@@ -116,6 +114,8 @@ lt --port 3000 --subdomain "your-subdomain"
 ```
 
 Now, you can load your local website via **https://your-subdomain.loca.lt** (a random subdomain will be used if the one you specified is not available).
+
+> NB: At times, you might not be able to reuse a subdomain on a short notice. A random one will be provided instead.
 
 ## Resources
 

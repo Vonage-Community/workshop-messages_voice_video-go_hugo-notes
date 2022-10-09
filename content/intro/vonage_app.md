@@ -13,13 +13,13 @@ Give your new application a name and choose "Generate public and private key"; y
 
 Do not set any capabilities for your application yet - you will add those in the following sections as required.
 
-![New Application](/intro/app_new.png)
+![New Application](/intro/app_new.png?classes=thumbnail_lg)
 
 ## 2. Link your Vonage Number
 
 Once you have created the application, from the list of available numbers, link the Vonage number you rented earlier, to use with this app. Multiple numbers can be linked.
 
-![App Numbers](/intro/app_numbers.png)
+![App Numbers](/intro/app_numbers.png?classes=thumbnail_lg)
 
 ## 3. Environment Variables
 
