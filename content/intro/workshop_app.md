@@ -42,7 +42,9 @@ To start the app:
 nodemon -e js,mustache server.js
 ```
 
-You can now navigate to [http://localhost:3000](http://localhost:3000) to see the app running.
+You can now navigate to [http://localhost:3000](http://localhost:3000) to see the app running:
+
+![Workshop app](/intro/app.png)
 
 ## 3. Environment Variables
 
