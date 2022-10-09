@@ -25,8 +25,6 @@ The **vonage** command is now available to use:
  vonage --help
 ```
 
----
-
 ## 2. Configuration
 
 Before using the CLI, it needs to be configured with your credentials:
@@ -43,8 +41,6 @@ vonage config
 
 > NB: Credentials are stored in **~/.config/@vonage/cli/vonage.config.json**.
 
----
-
 ## 3. Check balance
 
 To check your account balance:
@@ -52,8 +48,6 @@ To check your account balance:
 ```sh
 vonage balance
 ```
-
----
 
 ## 4. Send an SMS
 
@@ -75,9 +69,7 @@ To send an SMS, copy the snippet below and replace **YOUR_NUMBER** with your mob
 vonage sms --message='A text message sent using the Vonage CLI' --from=Vonage --to=YOUR_NUMBER
 ```
 
----
-
-**Resources**:
+## Resources
 
 - Homepage: [developer.vonage.com/application/vonage-cli](https://developer.vonage.com/application/vonage-cli)
 - CLI project: [github.com/Vonage/vonage-cli](https://github.com/Vonage/vonage-cli)

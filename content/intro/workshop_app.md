@@ -117,7 +117,7 @@ lt --port 3000 --subdomain "your-subdomain"
 
 Now, you can load your local website via **https://your-subdomain.loca.lt** (a random subdomain will be used if the one you specified is not available).
 
-**Resources**:
+## Resources
 
 - Express: [expressjs.com](https://expressjs.com/)
 - nodemon: [nodemon.io](https://nodemon.io/)

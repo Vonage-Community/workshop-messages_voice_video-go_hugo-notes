@@ -23,12 +23,10 @@ A successful response will include the remaining credit and the autoreload statu
 >
 > A similar tool, with a visual interface, is [Postman](https://www.postman.com/).
 
-**Resources**:
+#### Resources:
 
 - Documentation page: [developer.vonage.com/account/code-snippets/account-balance](https://developer.vonage.com/account/code-snippets/account-balance)
 - API Reference: [developer.vonage.com/api/account#getAccountBalance](https://developer.vonage.com/api/account#getAccountBalance)
-
----
 
 ## 2. Send an SMS
 
@@ -54,12 +52,10 @@ A successful response will include the message id as well as its cost and the re
 {"messages":[{"to":"xxx","message-id":"51a4b791-d4d8-4d4b-b05a-783654d4d7b2","status":"0","remaining-balance":"85.68078129","message-price":"0.04120000","network":"23433"}],"message-count":"1"}
 ```
 
-**Resources**:
+#### Resources:
 
 - Documentation page: [developer.vonage.com/messaging/sms/code-snippets/send-an-sms](https://developer.vonage.com/messaging/sms/code-snippets/send-an-sms)
 - API Reference: [developer.vonage.com/api/sms#send-an-sms](https://developer.vonage.com/api/sms#send-an-sms)
-
----
 
 ## 3. Search for a number to rent
 
@@ -102,15 +98,11 @@ curl "https://rest.nexmo.com/number/search?api_key=$VONAGE_API_KEY&api_secret=$V
 ]}
 ```
 
-> 
-
-**Resources**:
+#### Resources:
 
 - Documentation page: [developer.vonage.com/numbers/code-snippets/search-available](https://developer.vonage.com/numbers/code-snippets/bsearch-availableuy)
 - API Reference: [developer.vonage.com/api/numbers](https://developer.vonage.com/api/numbers)
 - [ISO 3166-1 alpha-2 codes](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Current_codes)
-
----
 
 ## 4. Renting a number
 
@@ -140,7 +132,11 @@ If the number is not available (e.g. rented by someone else), the following erro
 
 The rented number will appear in your [Dashboard](https://dashboard.vonage.com), under the [Your Numbers section](https://dashboard.nexmo.com/your-numbers).
 
-**Resources**:
+> NB: Some country have local regulations for certain numbers -e.g. renting a landline in Sweden requires physical presence in the same local region as the number.
+
+![Number rental requirements](/intro/app_numbers_reqs.png?classes=thumbnail_lg)
+
+#### Resources:
 
 - Documentation page: [developer.vonage.com/numbers/code-snippets/buy](https://developer.vonage.com/numbers/code-snippets/buy)
 - API Reference: [developer.vonage.com/api/numbers](https://developer.vonage.com/api/numbers)

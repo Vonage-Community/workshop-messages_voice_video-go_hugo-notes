@@ -60,10 +60,11 @@ As you complete the verification process, the terminal will display the response
   currency: 'EUR',
   estimated_price_messages_sent: '0.04120000'
 }
+```
 
 Notice that the second one will also include the verification price (€0.5) as well as additional messaging and/or voice rates for attempted and successful verifications.
 
-**Resources**:
+## Resources
 
 - Documentation : https://developer.vonage.com/verify
 - API Reference:  https://developer.vonage.com/api/verify

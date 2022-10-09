@@ -693,6 +693,21 @@ hr {
 #body-inner pre {
     white-space: pre-wrap;
 }
+#body-inner img {
+    border: 1px solid #e5e5e5;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 100%;
+}
+#body-inner img.thumbnail {
+    max-width: 400px;
+    max-height: 200px;
+}
+#body-inner img.thumbnail_lg {
+    max-width: 600px;
+    max-height: 400px;
+}
+
 .tabs-wrapper pre {
     margin: 1rem 0;
     border: 0;

@@ -28,8 +28,6 @@ and
 echo $VONAGE_API_SECRET
 ```
 
----
-
 ## Sections
 
 * [Making simple API calls](/intro/api_calls)
