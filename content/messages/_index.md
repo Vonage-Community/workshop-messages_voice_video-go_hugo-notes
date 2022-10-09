@@ -32,7 +32,7 @@ The Messages section consists of one screen that shows a form to send a message:
 All code required for this section is contained in the **_messages** folder of the app:
 
 - **_messages/index.js** - contains the code to display the form, sending the message and handle event and inbound webhooks
-- **_verify/form.mustache** - the message form
+- **_messages/form.mustache** - the message form
 
 ![Messages code](/messages/code.png)
 

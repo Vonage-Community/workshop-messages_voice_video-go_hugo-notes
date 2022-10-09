@@ -19,7 +19,7 @@ If you use ngrok or localtunnel, enter your given URL followed by the respective
 - `https://edc-2022.ngrok.io/messages/inbound` - for Inbound URL
 - `https://edc-2022.ngrok.io/messages/status` - for Status URL
 
-![App Capabilities >> Messages](/messages/app_capabillities.png)
+![App Capabilities >> Messages](/messages/app_capabilities.png)
 
 Don't forget to press **Save changes**.
 
