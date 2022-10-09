@@ -7,6 +7,10 @@ When you created your Vonage application, no capabilities were selected.
 
 ## App Capabilities >> Messages
 
+Navigate to your application and click the **Edit** button.
+
+![App summary](/messages/app.png)
+
 Under **Capabilities**, toggle the switch besides **Messages**. This will enable the use of the Messages API with your app and setting 2 URL to be used as webhooks.
 
 If you use ngrok or localtunnel, enter your given URL followed by the respective paths:

@@ -13,8 +13,6 @@ Navigate to your application and click the **Edit** button.
 
 Under **Capabilities**, toggle the switch besides **Voice**. This will enable the use of the Voice APIs with your app and setting 3 URL to be used as webhooks.
 
-![App edit](/voice/app_capabilities.png?classes=thumbnail_lg)
-
 If you use ngrok or localtunnel, enter your given URL followed by the respective paths, changing the HTTP method to **HTTP POST**:
 
 - **POST: https://subdomain.ngrok.io/voice/answer** - for Answer URL

@@ -103,6 +103,7 @@ There are lots of different ways you can [control how the Vonage Voice API plays
 - Text to Speech: https://developer.vonage.com/voice/voice-api/guides/text-to-speech
 - Customizing Spoken Text: https://developer.vonage.com/voice/voice-api/guides/customizing-tts
 - Phonemes: https://developer.vonage.com/voice/voice-api/guides/customizing-tts#phonemes
+- DTMF Tones: https://developer.vonage.com/voice/voice-api/guides/dtmf
 
 ## Exercise
 
