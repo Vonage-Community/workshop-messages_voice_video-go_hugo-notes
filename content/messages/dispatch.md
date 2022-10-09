@@ -7,6 +7,52 @@ weight: 90
 
 ![Dispatch API](/messages/dispatch-overview.png?classes=thumbnail_lg)
 
+Here is an example:
+
+```json
+"template":"failover",
+"workflow": [
+  {
+    "from": { "type": "messenger", "number": "YOUR_FB_ID" },
+    "to":   { "type": "messenger", "number": "RECIPIENT_FB_ID" },
+    "message": {
+      "content": {
+        "type": "text",
+        "text": "This is a Message sent via the Dispatch API"
+      }
+    },
+    "failover":{
+      "expiry_time": 3600,
+      "condition_status": "read"
+    }
+  },
+  {
+    "from": { "type": "viber_service_msg", "id": "YOUR_VIBER_ID" },
+    "to":   { "type": "viber_service_msg", "number": "DESTINATION_NUMBER" },
+    "message": {
+      "content": {
+        "type": "text",
+        "text": "This is a Message sent via the Dispatch API"
+      }
+    },
+    "failover":{
+      "expiry_time": 7200,
+      "condition_status": "delivered"
+    }
+  },
+  {
+    "from": { "type": "sms", "number": "VONAGE_NUMBER" },
+    "to":   { "type": "sms", "number": "DESTINATION_NUMBER" },
+    "message": {
+      "content": {
+        "type": "text",
+        "text": "This is a Message sent via the Dispatch API"
+      }
+    }
+  }
+]
+```
+
 ## Resources
 
 - Documentation : https://developer.vonage.com/dispatch
