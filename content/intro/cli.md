@@ -114,16 +114,10 @@ A successful response will include the a subset of available numbers, together w
 
 ## 6. Renting a number
 
-Now that you found a number, you can "buy" it:
+Now that you found a number, you can "buy" it using the snippet below, replacing **VONAGE_NUMBER** and **COUNTRY_CODE** as required:
 
 ```sh
 vonage numbers:buy VONAGE_NUMBER COUNTRY_CODE
-```
-
-Replacing **VONAGE_NUMBER** and **COUNTRY_CODE** as required:
-
-```sh
-vonage numbers:buy 12013753230 US
 ```
 
 The rented number will appear in your [Dashboard](https://dashboard.vonage.com), under the [Your Numbers section](https://dashboard.nexmo.com/your-numbers).
