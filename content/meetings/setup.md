@@ -13,15 +13,10 @@ Navigate to your application and click the **Edit** button.
 
 Under **Capabilities**, toggle the switch besides **Voice**. This will enable the use of the Voice APIs with your app and setting 3 URL to be used as webhooks.
 
-If you use ngrok or localtunnel, enter your given URL followed by the respective paths, changing the HTTP method to **HTTP POST**:
+If you using ngrok, enter your given URL followed by the respective paths:
 
 - **https://subdomain.ngrok.io/meetings/rooms** - for Rooms URL
 - **https://subdomain.ngrok.io/meetings/sessions** - for Sessions URL
-
-### If you are not able to run any of the tools above, please use:
-
-- `https://edc-2022.ngrok.io/meetings/rooms` - for Rooms URL
-- `https://edc-2022.ngrok.io/meetings/sessions` - for Sessions URL
 
 ![App Capabilities >> Meetings](/meetings/app_capabilities.png)
 

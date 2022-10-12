@@ -13,15 +13,10 @@ Navigate to your application and click the **Edit** button.
 
 Under **Capabilities**, toggle the switch besides **Messages**. This will enable the use of the Messages API with your app and setting 2 URL to be used as webhooks.
 
-If you use ngrok or localtunnel, enter your given URL followed by the respective paths:
+If you using ngrok, enter your given URL followed by the respective paths:
 
 - **https://subdomain.ngrok.io/messages/inbound** - for Inbound URL
 - **https://subdomain.ngrok.io/messages/status** - for Status URL
-
-### If you are not able to run any of the tools above, please use:
-
-- `https://edc-2022.ngrok.io/messages/inbound` - for Inbound URL
-- `https://edc-2022.ngrok.io/messages/status` - for Status URL
 
 ![App Capabilities >> Messages](/messages/app_capabilities.png?classes=thumbnail_lg)
 

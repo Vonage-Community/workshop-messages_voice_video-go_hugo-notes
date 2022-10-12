@@ -42,6 +42,8 @@ To start the app:
 nodemon -e js,mustache server.js
 ```
 
+### 2.1 Local webpage
+
 You can now navigate to [http://localhost:3000](http://localhost:3000) to see the app running:
 
 ![Workshop app](/intro/app.png)
@@ -75,31 +77,41 @@ You will be adding your credentials to this file in the next step.
 
 For some operations, Vonage will require some information for you - this is done via [webhooks](https://en.wikipedia.org/wiki/Webhook). Similarly, when an event happens, Vonage will send that event information to a webhook URL you will be providing.
 
-The app you just cloned includes ndpoints that can be use as webhooks for your Vonage application. For this to work, the endpoints will need to be available to the Vonage server to read data from and push data to.
+Here is what happens when you receive a inbound message via the Messages API:
 
-### 4.1 Firewalls & networks
+![Receiving an SMS](/messages/inbound_url.gif?classes=thumbnail_lg)
 
-Various utilities exist to enable you to expose local ports to the world. Two are described below (ngrok preferred).
+The app you just cloned includes the required endpoints but they will need to be available to the Vonage server to read data from and push data to.
 
-Some corporate networks are more restricted than others - alternatives will be provided for when exposing local ports is not possible.
+ngrok is the programmable network edge that adds connectivity, security, and observability to your apps with no code **changes**. Installation guides and downloadable archives are available at [https://ngrok.com/download](https://ngrok.com/download).
 
-### 4.2 ngrok
+### 4.1 ngrok subdomain
 
-ngrok is the programmable network edge that adds connectivity, security, and observability to your apps with no code **changes**
-
-Installation guides and downloadable archives are available at [https://ngrok.com/download](https://ngrok.com/download).
-
-Assuming that you downloaded the right package for your platform and placed it in your directory, to use it:
+Assuming that you downloaded the right ngrok package for your platform and placed it in your home directory, open a new terminal window or tab and launch it:
 
 ```sh
 ~/ngrok http 3000
 ```
 
-Your local app is now available via **https://random_subdomain.ngrok.io**. It also provides a web interface at [http://localhost:4040/](http://localhost:4040/) to inspect, replay, and modify your requests.
+### 4.2 Public webpage
 
-> ngrok is a commercial product and additional features are available (such as reserving a subdomain).
+Your local app is now available via **https://random_subdomain.ngrok.io**. 
 
-### 4.3 localtunnel
+ngrok also provides a local monitoring server at <http://localhost:4040> to inspect, replay, and modify your requests. It is a great way to visualise incoming webhooks events.
+
+## Addendum: firewalls & networks
+
+Various utilities exist to enable you to expose local ports to the world. Two are described below (ngrok preferred).
+
+Some corporate networks are more restrictive than others - please contact your IT support for alternatives to the tools described below.
+
+### ngrok
+
+ngrok is the programmable network edge that adds connectivity, security, and observability to your apps with no code **changes**
+
+It is a commercial product with additional features, such as reserving a subdomain, available with a subscription.
+
+### localtunnel
 
 [localtunnel](https://github.com/localtunnel/localtunnel) is a utility that exposes your localhost to the world for easy testing. In another terminal window:
 
@@ -116,6 +128,19 @@ lt --port 3000 --subdomain "your-subdomain"
 Now, you can load your local website via **https://your-subdomain.loca.lt** (a random subdomain will be used if the one you specified is not available).
 
 > NB: At times, you might not be able to reuse a subdomain on a short notice. A random one will be provided instead.
+
+### Alternatives
+
+Various cloud-based alternative exist and could we used to spin un the app. 
+
+#### Github Codespaces
+
+![Github Codespaces](/intro/github_codespaces.png?classes=thumbnail_lg)
+
+#### Stackblitz
+
+![Stackblitz](/intro/stackblitz.png?classes=thumbnail)
+![Stackblitz Project](/intro/stackblitz_project.png?classes=thumbnail)
 
 ## Resources
 

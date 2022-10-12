@@ -13,7 +13,7 @@ A full list of Vonage's API is available on the [Developer Portal](https://devel
 
 ## Contact
 
-Have questions, a big idea, or something to share? Drop us a message at devrel@vonage.com.
+Have questions, a big idea, or something to share? Drop us a message at devrel@vonage.com or join our [Community Slack](https://developer.vonage.com/community/slack).
 
 ## Source Code
 
